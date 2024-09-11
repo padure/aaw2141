@@ -16,5 +16,15 @@
         return "$text, $numeUser";
     };
     echo $hello("Hello");
-    # 
+    # Arrow
+    $messaj = fn(string $nume, string $tip): string => "$nume, $tip";
+    echo $messaj("John Doe", "Admin");
+    
+    #Destructurizare
+    function sumaSir(...$numere) : int|float {
+        return array_sum($numere);
+    }
+    
+    echo sumaSir(1, 2, 34, 5, 1, 67);
+    
 ?>
