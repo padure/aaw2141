@@ -38,12 +38,15 @@
                         <td>
                             <img src="uploads/<?= $imagine; ?>" alt="Imagine" class="col-1 m-0">
                         </td>
-                        <td>
+                        <td class="d-flex flex-column">
                             <a  href="download.php?file=<?=$imagine?>"
                                 class="text-success">Descarca</a>
+                            <a  href="uploads/<?=$imagine?>"
+                                class="text-info">Afiseaza</a>
                             <a  href="delete.php?file=<?=$imagine?>"
                                 class="text-danger"
-                                onclick="return confirm('Sigur doriti sa stergeti aceasta imagine?');">Sterge</a>
+                                onclick="return confirm('Sigur doriti sa stergeti aceasta imagine?');">
+                                Sterge</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
