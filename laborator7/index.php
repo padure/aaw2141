@@ -35,8 +35,22 @@
     </div>
     <!-- End Main -->
     <!-- Modal -->
-    <div class="modal-dialog modal-lg">
-    
+    <div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Inregistreaza un utilizator</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- End Modal -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
