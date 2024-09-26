@@ -26,11 +26,19 @@
         </div>
     </nav>
     <!-- Main -->
-     <div class="container my-4">
+    <div class="container my-4">
         <div class="row">
-            <button class="btn btn-dark btn-sm col-1">Adauga</button>
+            <button class="btn btn-dark btn-sm col-1" data-bs-toggle="modal" data-bs-target="#userModal">
+                Adauga
+            </button>
         </div>
-     </div>
+    </div>
+    <!-- End Main -->
+    <!-- Modal -->
+    <div class="modal-dialog modal-lg">
+    
+    </div>
+    <!-- End Modal -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
