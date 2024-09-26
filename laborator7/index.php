@@ -43,11 +43,50 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-dark btn-sm">Save</button>
+                    <form action="save_user.php" method="post">
+                        <div class="mb-3">
+                            <label for="nume">Nume</label>
+                            <input type="text" name="nume" id="nume" class="form-control" autocomplete="off" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genul">Genul</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genul" id="m" value="Masculin" checked>
+                                <label class="form-check-label" for="m">
+                                    Masculin
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genul" id="f" value="Femenin">
+                                <label class="form-check-label" for="f">
+                                    Femenin
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="localitate">Localitate</label>
+                            <select name="localitate" id="localitate" class="form-control">
+                                <option>Chisinau</option>
+                                <option>Cahul</option>
+                                <option>Balti</option>
+                                <option>Soroca</option>
+                                <option>Galati</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="checkbox" name="abonat" id="abonat" class="form-check-input">
+                            <label for="abonat">Doresc sa ma abonez la noutati</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="parola">Parola</label>
+                            <input type="password" name="parola" id="parola" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-sm">Save</button>
+                    </form>
                 </div>
             </div>
         </div>
