@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    $file = "users.json";
+    $users = [];
+    if(file_exists($file)){
+        $json_users = file_get_contents($file);
+        $users = json_decode($json_users, true) ?? [];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +41,44 @@
                 Adauga
             </button>
         </div>
+        <div class="row mt-4">
+            <?php if(isset($_SESSION['errors'])): ?>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <?php foreach( $_SESSION['errors'] as $error ): ?>
+                            <li><?=$error?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+            <?php session_unset(); ?>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nume</th>
+                        <th>Gen</th>
+                        <th>Localitate</th>
+                        <th>Email</th>
+                        <th>Abonat</th>
+                        <th>Optiuni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($users as $user): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($user['nume']) ?></td>
+                            <td><?= htmlspecialchars($user['genul']) ?></td>
+                            <td><?= htmlspecialchars($user['localitate']) ?></td>
+                            <td><?= htmlspecialchars($user['email']) ?></td>
+                            <td><?= htmlspecialchars($user['abonat']) ?></td>
+                            <td>
+                                <a href="sterge.php?user=<?=$user['id']?>" class="btn btn-danger btn-sm">Sterge</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- End Main -->
     <!-- Modal -->
@@ -46,7 +93,7 @@
                     <form action="save_user.php" method="post">
                         <div class="mb-3">
                             <label for="nume">Nume</label>
-                            <input type="text" name="nume" id="nume" class="form-control" autocomplete="off" required>
+                            <input type="text" name="nume" id="nume" class="form-control" autocomplete="off">
                         </div>
                         <div class="mb-3">
                             <label for="genul">Genul</label>
@@ -79,11 +126,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" class="form-control" required>
+                            <input type="email" name="email" id="email" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="parola">Parola</label>
-                            <input type="password" name="parola" id="parola" class="form-control" required>
+                            <input type="password" name="parola" id="parola" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-dark btn-sm">Save</button>
                     </form>
