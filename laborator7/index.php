@@ -22,6 +22,11 @@ if (file_exists($file)) {
                 return $user['abonat'] == $_GET['abonat'];
             });
         }
+        if(isset($_GET['localitate'])){
+            $users = array_filter($users, function($user){
+                return $user['localitate'] == $_GET['localitate'];
+            });
+        }
     }
 }
 ?>
@@ -136,9 +141,11 @@ if (file_exists($file)) {
                                 <td><?= htmlspecialchars($user['localitate']) ?></td>
                                 <td><?= htmlspecialchars($user['email']) ?></td>
                                 <td><?= htmlspecialchars($user['abonat']) ?></td>
-                                <td>
-                                    <a href="sterge.php?user=<?= $user['id'] ?>" class="btn btn-danger btn-sm"
+                                <td class="d-flex">
+                                    <a href="sterge.php?user=<?= $user['id'] ?>" class="btn btn-danger btn-sm me-2"
                                         onclick="return confirm('Esti sigur?');">Sterge</a>
+                                    <a href="edit.php?user=<?= $user['id'] ?>" class="btn btn-warning btn-sm text-white">
+                                        Edit</a>
                                 </td>
                             </tr>
                             <?php $i++; ?>
