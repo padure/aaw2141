@@ -1,38 +1,11 @@
-[
-    {
-        "nume": "John Doe",
+{
+    "1": {
+        "nume": "asdasdasdasd",
         "genul": "Masculin",
-        "localitate": "Cahul",
-        "email": "test@gmail.com",
-        "parola": "asdasdasdasdasdasdasd",
-        "abonat": "Da",
-        "id": "66fba2be8887b"
-    },
-    {
-        "nume": "John Doe",
-        "genul": "Masculin",
-        "localitate": "Chisinau",
-        "email": "jd@gmail.com",
-        "parola": "$2y$10$.y\/scY1pCxhC7fTL1KdUpexBmH634f5zRQnsX1BgGe93P.fIQMOQ.",
-        "abonat": "Nu",
-        "id": "66fba467de1be"
-    },
-    {
-        "nume": "Test user 2",
-        "genul": "Femenin",
-        "localitate": "Soroca",
-        "email": "eegergergerg@sdfsdf.com",
-        "parola": "$2y$10$CjMB7Ntvx\/K7q1\/qgGeYzOHMbPZPmc2oNtG5MOOoUUSrRBLKhPwti",
-        "abonat": "Da",
-        "id": "66fba7bde5aff"
-    },
-    {
-        "nume": "Test 3",
-        "genul": "Femenin",
         "localitate": "Chisinau",
         "email": "lbodlev888@gmail.com",
-        "parola": "$2y$10$JZ2tKvve8uEx7B4izwWgweYboAiV45zfsdehvctNlwknskIz0FhjS",
-        "abonat": "Da",
-        "id": "66fba97d97b5a"
+        "parola": "$2y$10$\/g0X00aPnKu7q54Xdscb5.MjIIzWQ7fwSCbtRFqM5MVmJ2lyKubGO",
+        "abonat": "Nu",
+        "id": "66fbacc9d7c70"
     }
-]
+}

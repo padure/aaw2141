@@ -2,6 +2,7 @@
     session_start();
     $file = "users.json";
     $users = [];
+    $i = 1;
     if(file_exists($file)){
         $json_users = file_get_contents($file);
         $users = json_decode($json_users, true) ?? [];
@@ -42,6 +43,11 @@
             </button>
         </div>
         <div class="row mt-4">
+            <?php if(isset($_SESSION['success'])): ?>
+                <div class="alert alert-success" role="alert">
+                    <?=$_SESSION['success']?>
+                </div>
+            <?php endif; ?>
             <?php if(isset($_SESSION['errors'])): ?>
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -55,6 +61,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nume</th>
                         <th>Gen</th>
                         <th>Localitate</th>
@@ -66,15 +73,19 @@
                 <tbody>
                     <?php foreach($users as $user): ?>
                         <tr>
+                            <td><?= $i ?></td>
                             <td><?= htmlspecialchars($user['nume']) ?></td>
                             <td><?= htmlspecialchars($user['genul']) ?></td>
                             <td><?= htmlspecialchars($user['localitate']) ?></td>
                             <td><?= htmlspecialchars($user['email']) ?></td>
                             <td><?= htmlspecialchars($user['abonat']) ?></td>
                             <td>
-                                <a href="sterge.php?user=<?=$user['id']?>" class="btn btn-danger btn-sm">Sterge</a>
+                                <a  href="sterge.php?user=<?=$user['id']?>" 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Esti sigur?');">Sterge</a>
                             </td>
                         </tr>
+                    <?php $i++; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
