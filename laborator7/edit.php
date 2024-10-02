@@ -7,9 +7,10 @@
         $json_users = file_get_contents($file);
         $users = json_decode($json_users, true) ?? [];
     }
-    $user = array_filter($users, function($user) use($user_id){
+    $data = array_filter($users, function($user) use($user_id){
         return $user['id'] == $user_id;
     });
+    $user = array_pop($data);
 ?>
 <!DOCTYPE html>
 <html lang="ro">
@@ -50,7 +51,7 @@
                 <form action="update_user.php" method="post">
                     <div class="mb-3">
                         <label for="nume">Nume</label>
-                        <input type="text" name="nume" id="nume" class="form-control" autocomplete="off">
+                        <input type="text" name="nume" id="nume" class="form-control" autocomplete="off" value="<?=$user['nume']?>">
                     </div>
                     <div class="mb-3">
                         <label for="genul">Genul</label>
@@ -83,7 +84,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control">
+                        <input type="email" name="email" id="email" class="form-control" value="<?=$user['email']?>">
                     </div>
                     <div class="mb-3">
                         <label for="parola">Parola</label>
