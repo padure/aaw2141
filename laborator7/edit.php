@@ -1,13 +1,13 @@
-<?php 
+<?php
     session_start();
     $user_id = htmlspecialchars($_GET['user']);
     $file = 'users.json';
     $users = [];
-    if(file_exists($file)){
+    if (file_exists($file)) {
         $json_users = file_get_contents($file);
         $users = json_decode($json_users, true) ?? [];
     }
-    $data = array_filter($users, function($user) use($user_id){
+    $data = array_filter($users, function ($user) use ($user_id) {
         return $user['id'] == $user_id;
     });
     $user = array_pop($data);
@@ -48,21 +48,21 @@
         <div class="row">
             <div class="col-6 m-auto">
                 <h4>Editeaza utilizatorul</h4>
-                <form action="update_user.php" method="post">
+                <form action="update_user.php?user=<?= $user_id ?>" method="post">
                     <div class="mb-3">
                         <label for="nume">Nume</label>
-                        <input type="text" name="nume" id="nume" class="form-control" autocomplete="off" value="<?=$user['nume']?>">
+                        <input type="text" name="nume" id="nume" class="form-control" autocomplete="off" value="<?= $user['nume'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="genul">Genul</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="genul" id="m" value="Masculin" checked>
+                            <input class="form-check-input" type="radio" name="genul" id="m" value="Masculin" <?= ($user['genul'] == 'Masculin') ? 'checked' : '' ?>>
                             <label class="form-check-label" for="m">
                                 Masculin
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="genul" id="f" value="Femenin">
+                            <input class="form-check-input" type="radio" name="genul" id="f" value="Femenin" <?= ($user['genul'] == 'Femenin') ? 'checked' : '' ?>>
                             <label class="form-check-label" for="f">
                                 Femenin
                             </label>
@@ -71,20 +71,20 @@
                     <div class="mb-3">
                         <label for="localitate">Localitate</label>
                         <select name="localitate" id="localitate" class="form-control">
-                            <option>Chisinau</option>
-                            <option>Cahul</option>
-                            <option>Balti</option>
-                            <option>Soroca</option>
-                            <option>Galati</option>
+                            <option value="Chisinau" <?= ($user['localitate'] == 'Chisinau') ? 'selected' : '' ?>>Chisinau</option>
+                            <option value="Cahul" <?= ($user['localitate'] == 'Cahul') ? 'selected' : '' ?>>Cahul</option>
+                            <option value="Balti" <?= ($user['localitate'] == 'Balti') ? 'selected' : '' ?>>Balti</option>
+                            <option value="Soroca" <?= ($user['localitate'] == 'Soroca') ? 'selected' : '' ?>>Soroca</option>
+                            <option value="Galati" <?= ($user['localitate'] == 'Galati') ? 'selected' : '' ?>>Galati</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <input type="checkbox" name="abonat" id="abonat" class="form-check-input">
+                        <input type="checkbox" name="abonat" id="abonat" class="form-check-input" <?= ($user['abonat'] == "Da" ? 'checked' : '') ?>>
                         <label for="abonat">Doresc sa ma abonez la noutati</label>
                     </div>
                     <div class="mb-3">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" value="<?=$user['email']?>">
+                        <input type="email" name="email" id="email" class="form-control" value="<?= $user['email'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="parola">Parola</label>

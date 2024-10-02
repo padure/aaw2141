@@ -1,6 +1,6 @@
 {
     "1": {
-        "nume": "asdasdasdasd",
+        "nume": "Alin Boboc",
         "genul": "Masculin",
         "localitate": "Chisinau",
         "email": "lbodlev888@gmail.com",
@@ -9,22 +9,13 @@
         "id": "66fbacc9d7c70"
     },
     "2": {
-        "nume": "John Doe",
+        "nume": "John Doe 2",
         "genul": "Masculin",
         "localitate": "Chisinau",
         "email": "paduregheorghe7@gmail.com",
         "parola": "$2y$10$xIuWWN3aPtQLJ6qIUmIoNehEUHWyFlaG7ayyeNMvau3laRSKCQtI2",
         "abonat": "Da",
         "id": "66fcf6038e2a4"
-    },
-    "3": {
-        "nume": "Test Tester",
-        "genul": "Masculin",
-        "localitate": "Chisinau",
-        "email": "asdasdas@gmail.com",
-        "parola": "$2y$10$lwofo9i6zt9uBeaU4gZWIecOEuggj8h5bdcjTHRvY3YoP21ZpJE7y",
-        "abonat": "Nu",
-        "id": "66fcf642dbede"
     },
     "4": {
         "nume": "Will Smith",
@@ -34,5 +25,14 @@
         "parola": "$2y$10$DqsKddSbqvM34vOKpgn9RumvJZctP77RN1hNQ2c\/72YiNBMi4ZDUy",
         "abonat": "Da",
         "id": "66fcf98853d0d"
+    },
+    "5": {
+        "nume": "Utilizator 1",
+        "genul": "Femenin",
+        "localitate": "Soroca",
+        "email": "jd@gmail.com",
+        "parola": "$2y$10$feYBKGAVIAim\/v7FtDV2Tuhi9FO1q\/L43xIPUn6YXOzjExc2vy\/ZG",
+        "abonat": "Da",
+        "id": "66fd28aab331f"
     }
 }
