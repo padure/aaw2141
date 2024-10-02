@@ -7,5 +7,32 @@
         "parola": "$2y$10$\/g0X00aPnKu7q54Xdscb5.MjIIzWQ7fwSCbtRFqM5MVmJ2lyKubGO",
         "abonat": "Nu",
         "id": "66fbacc9d7c70"
+    },
+    "2": {
+        "nume": "John Doe",
+        "genul": "Masculin",
+        "localitate": "Chisinau",
+        "email": "paduregheorghe7@gmail.com",
+        "parola": "$2y$10$xIuWWN3aPtQLJ6qIUmIoNehEUHWyFlaG7ayyeNMvau3laRSKCQtI2",
+        "abonat": "Da",
+        "id": "66fcf6038e2a4"
+    },
+    "3": {
+        "nume": "Test Tester",
+        "genul": "Masculin",
+        "localitate": "Chisinau",
+        "email": "asdasdas@gmail.com",
+        "parola": "$2y$10$lwofo9i6zt9uBeaU4gZWIecOEuggj8h5bdcjTHRvY3YoP21ZpJE7y",
+        "abonat": "Nu",
+        "id": "66fcf642dbede"
+    },
+    "4": {
+        "nume": "Will Smith",
+        "genul": "Masculin",
+        "localitate": "Cahul",
+        "email": "lbodlev888@gmail.com",
+        "parola": "$2y$10$DqsKddSbqvM34vOKpgn9RumvJZctP77RN1hNQ2c\/72YiNBMi4ZDUy",
+        "abonat": "Da",
+        "id": "66fcf98853d0d"
     }
 }

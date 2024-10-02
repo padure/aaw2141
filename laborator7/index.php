@@ -1,12 +1,29 @@
 <?php
-    session_start();
-    $file = "users.json";
-    $users = [];
-    $i = 1;
-    if(file_exists($file)){
-        $json_users = file_get_contents($file);
-        $users = json_decode($json_users, true) ?? [];
+session_start();
+$file = "users.json";
+$users = [];
+$localitati = [];
+$i = 1;
+if (file_exists($file)) {
+    $json_users = file_get_contents($file);
+    $users = json_decode($json_users, true) ?? [];
+    foreach ($users as $user) {
+        if(!in_array($user['localitate'], $localitati))
+            $localitati[] = $user['localitate'];
     }
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if (isset($_GET['search'])) {
+            $users = array_filter($users, function ($user) {
+                return stripos($user['nume'], $_GET['search']) !== false;
+            });
+        }
+        if (isset($_GET['abonat'])) {
+            $users = array_filter($users, function ($user) {
+                return $user['abonat'] == $_GET['abonat'];
+            });
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +44,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Acasa</a>
                     </li>
                 </ul>
+                <form class="d-flex" role="search" method="get">
+                    <input class="form-control me-2" type="search" name="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
@@ -43,52 +65,87 @@
             </button>
         </div>
         <div class="row mt-4">
-            <?php if(isset($_SESSION['success'])): ?>
+            <?php if (isset($_SESSION['success'])): ?>
                 <div class="alert alert-success" role="alert">
-                    <?=$_SESSION['success']?>
+                    <?= $_SESSION['success'] ?>
                 </div>
             <?php endif; ?>
-            <?php if(isset($_SESSION['errors'])): ?>
+            <?php if (isset($_SESSION['errors'])): ?>
                 <div class="alert alert-danger" role="alert">
                     <ul>
-                        <?php foreach( $_SESSION['errors'] as $error ): ?>
-                            <li><?=$error?></li>
+                        <?php foreach ($_SESSION['errors'] as $error): ?>
+                            <li><?= $error ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
             <?php endif; ?>
             <?php session_unset(); ?>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nume</th>
-                        <th>Gen</th>
-                        <th>Localitate</th>
-                        <th>Email</th>
-                        <th>Abonat</th>
-                        <th>Optiuni</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($users as $user): ?>
+        </div>
+        <div class="row">
+            <div class="col-md-2 border-top pt-2">
+                <form method="get">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Da" id="abonat_search" name="abonat">
+                        <label class="form-check-label" for="abonat_search">
+                            Abonati
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Nu" id="dezabonat" name="abonat">
+                        <label class="form-check-label" for="dezabonat">
+                            Neabonati
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="localitati">Localitati</label>
+                        <?php foreach ($localitati as $key => $localitate): ?>
+                            <div class="form-check">
+                                <input  class="form-check-input" 
+                                        type="radio" 
+                                        value="<?=$localitate?>" 
+                                        id="localitate-<?=$key?>" 
+                                        name="localitate">
+                                <label class="form-check-label" for="localitate-<?=$key?>">
+                                    <?=$localitate;?>
+                                </label>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-sm">Cauta</button>
+                </form>
+            </div>
+            <div class="col-md-10">
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
-                            <td><?= $i ?></td>
-                            <td><?= htmlspecialchars($user['nume']) ?></td>
-                            <td><?= htmlspecialchars($user['genul']) ?></td>
-                            <td><?= htmlspecialchars($user['localitate']) ?></td>
-                            <td><?= htmlspecialchars($user['email']) ?></td>
-                            <td><?= htmlspecialchars($user['abonat']) ?></td>
-                            <td>
-                                <a  href="sterge.php?user=<?=$user['id']?>" 
-                                    class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Esti sigur?');">Sterge</a>
-                            </td>
+                            <th>#</th>
+                            <th>Nume</th>
+                            <th>Gen</th>
+                            <th>Localitate</th>
+                            <th>Email</th>
+                            <th>Abonat</th>
+                            <th>Optiuni</th>
                         </tr>
-                    <?php $i++; ?>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($users as $user): ?>
+                            <tr>
+                                <td><?= $i ?></td>
+                                <td><?= htmlspecialchars($user['nume']) ?></td>
+                                <td><?= htmlspecialchars($user['genul']) ?></td>
+                                <td><?= htmlspecialchars($user['localitate']) ?></td>
+                                <td><?= htmlspecialchars($user['email']) ?></td>
+                                <td><?= htmlspecialchars($user['abonat']) ?></td>
+                                <td>
+                                    <a href="sterge.php?user=<?= $user['id'] ?>" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Esti sigur?');">Sterge</a>
+                                </td>
+                            </tr>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <!-- End Main -->
@@ -109,7 +166,8 @@
                         <div class="mb-3">
                             <label for="genul">Genul</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="genul" id="m" value="Masculin" checked>
+                                <input class="form-check-input" type="radio" name="genul" id="m" value="Masculin"
+                                    checked>
                                 <label class="form-check-label" for="m">
                                     Masculin
                                 </label>
