@@ -9,19 +9,19 @@
         "id": "66fbacc9d7c70"
     },
     "2": {
-        "nume": "John Doe 2",
-        "genul": "Masculin",
-        "localitate": "Chisinau",
+        "nume": "John Doe 3",
+        "genul": "Femenin",
+        "localitate": "Cahul",
         "email": "paduregheorghe7@gmail.com",
         "parola": "$2y$10$xIuWWN3aPtQLJ6qIUmIoNehEUHWyFlaG7ayyeNMvau3laRSKCQtI2",
-        "abonat": "Da",
+        "abonat": "Nu",
         "id": "66fcf6038e2a4"
     },
     "4": {
-        "nume": "Will Smith",
+        "nume": "Ion Creanga",
         "genul": "Masculin",
         "localitate": "Cahul",
-        "email": "lbodlev888@gmail.com",
+        "email": "jd@gmail.com",
         "parola": "$2y$10$DqsKddSbqvM34vOKpgn9RumvJZctP77RN1hNQ2c\/72YiNBMi4ZDUy",
         "abonat": "Da",
         "id": "66fcf98853d0d"
