@@ -36,11 +36,19 @@
         public function tipCombustibil(){
             return "Benzina";
         }
+        public function afiseazaDetalii(){
+            parent::afiseazaDetalii();
+            echo " " . $this->tipCombustibil();
+        }
     }
 
     class Motocicleta extends VehiculMotorizat{
         public function tipCombustibil(){
             return "Motorina";
+        }
+        public function afiseazaDetalii(){
+            parent::afiseazaDetalii();
+            echo " " . $this->tipCombustibil();
         }
     }
 
@@ -58,6 +66,4 @@
             }
         }
     }
-
-    
 ?>
