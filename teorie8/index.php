@@ -30,12 +30,32 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 m-auto mt-5">
                 <h4>Adauga un utilizator</h4>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="nume_prenume">Nume Prenume</label>
+                        <input type="text" name="nume_prenume" id="nume_prenume" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Parola</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="data_nasterii">Data nasterii</label>
+                        <input type="date" name="data_nasterii" id="data_nasterii" class="form-control">
+                    </div>
+                    <button class="btn btn-dark btn-sm" type="submit">Save</button>
+                </form>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 my-4">
+                <h4>Lista utilizatorilor</h4>
                 <table class="table">
                     <thead>
                         <tr>
