@@ -12,6 +12,15 @@
             $password = $_POST['password'];
             $dataNasterii = $_POST['data_nasterii'];
             $sql = "UPDATE users SET nume_prenume = :nume_prenume, email = :email, parola = :parola, data_nasterii = :data_nasterii WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'nume_prenume' => $numePrenume,
+                'email' => $email,
+                'parola' => $password,
+                'data_nasterii' => $dataNasterii,
+                'id' => $id
+            ]);
+            header('location:index.php');
         }
         $pdo = null;
     } catch (PDOException $e) {
