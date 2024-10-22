@@ -59,11 +59,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <td>#</td>
-                            <td>Nume prenume</td>
-                            <td>Email</td>
-                            <td>Data nasterii</td>
-                            <td>Optiuni</td>
+                            <td class="fw-bold">#</td>
+                            <td class="fw-bold">Nume prenume</td>
+                            <td class="fw-bold">Email</td>
+                            <td class="fw-bold">Data nasterii</td>
+                            <td class="fw-bold">Optiuni</td>
                         </tr>
                     </thead>
                     <tbody>
