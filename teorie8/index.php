@@ -1,13 +1,6 @@
 <?php
     try {
-        $dsn = "mysql:host=localhost;dbname=aaw_lectia8";
-        $username="root";
-        $password="";
-        $options = [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ];
-        $pdo = new PDO($dsn, $username, $password, $options);
+        require_once './connect.php';
         
         $sql = "SELECT * FROM users";
         // $stmt = $pdo->query($sql);
@@ -15,6 +8,22 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $users = $stmt->fetchAll();
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            $numePrenume = $_POST['nume_prenume'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $dataNasterii = $_POST['data_nasterii'];
+            $sql = "INSERT INTO users (nume_prenume, email, parola, data_nasterii) VALUES (:nume_prenume, :email, :parola, :data_nasterii)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'nume_prenume' => $numePrenume,
+                'email' => $email, 
+                'parola' => $password, 
+                'data_nasterii' => $dataNasterii, 
+            ]);
+            header('location:index.php');
+        }
+
     } catch (PDOException $e) {
         die("Eroare la conexiune. " . $e->getMessage());
     }
@@ -74,8 +83,8 @@
                                 <td><?=$user['email']?></td>
                                 <td><?=$user['data_nasterii']?></td>
                                 <td class="d-flex gap-3">
-                                    <a href="" class="text-warning">Edit</a>
-                                    <a href="" class="text-danger">Delete</a>
+                                    <a href="edit.php?id=<?= $user['id']?>" class="text-warning">Edit</a>
+                                    <a href="delete.php?id=<?= $user['id']?>" class="text-danger" onclick="return confirm('Esti sigur?')">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
