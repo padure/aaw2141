@@ -35,7 +35,16 @@
         
         public function update (Request $request, Response $response, array $args) 
         {
-
+            $data = json_decode($request->getBody()->getContents(), true);
+            $project = Project::find($args['id']);
+            if(!$project){
+                $response->getBody()->write(json_encode(['message'=>'Nu exista date!']));
+                return $response->withHeader('Content-Type', 'application/json');
+            }
+            $project->fill($data);
+            $project->save();
+            $response->getBody()->write(json_encode(['message'=>'Proiect actualizat!']));
+            return $response->withHeader('Content-Type', 'application/json');
         }
         
         public function delete (Request $request, Response $response, array $args) 
