@@ -49,6 +49,13 @@
         
         public function delete (Request $request, Response $response, array $args) 
         {
-
+            $project = Project::find($args['id']);
+            if(!$project){
+                $response->getBody()->write(json_encode(['message'=>'Nu exista date!']));
+                return $response->withHeader('Content-Type', 'application/json');
+            }
+            $project->delete();
+            $response->getBody()->write(json_encode(['message'=>'Proiect sters cu succes!']));
+            return $response->withHeader('Content-Type', 'application/json');
         }
     }
