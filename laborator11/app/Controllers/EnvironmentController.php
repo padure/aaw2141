@@ -9,7 +9,7 @@
     {   
         public function index(Request $request, Response $response, array $args)
         {
-            $environments = Environment::all();
+            $environments = Environment::with("project")->get();
             $response->getBody()->write(json_encode($environments));
             return $response->withHeader('Content-Type', 'application/json');  
         }
@@ -24,7 +24,7 @@
 
         public function show (Request $request, Response $response, array $args) 
         {
-            $environment = Environment::find($args['id']);
+            $environment = Environment::with("project")->find($args['id']);
             if(!$environment){
                 $response->getBody()->write(json_encode(['message'=>'Nu exista date!']));
                 return $response->withHeader('Content-Type', 'application/json');

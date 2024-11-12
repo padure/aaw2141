@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
     {
         protected $table = 'environments';
 
-        protected $fillable = ['project_id', 'name'];
+        protected $fillable = ['name'];
+
+        protected $hidden = ['project_id'];
 
         public function project():BelongsTo
         {

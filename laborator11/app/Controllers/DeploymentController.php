@@ -3,59 +3,59 @@
 
     use Psr\Http\Message\ResponseInterface as Response;
     use Psr\Http\Message\ServerRequestInterface as Request;
-    use App\Models\Project;
+    use App\Models\Deployment;
 
-    class ProjectController
+    class DeploymentController
     {   
         public function index(Request $request, Response $response, array $args)
         {
-            $projects = Project::with("environments")->get();
-            $response->getBody()->write(json_encode($projects));
+            $deployments = Deployment::with("environment")->get();
+            $response->getBody()->write(json_encode($deployments));
             return $response->withHeader('Content-Type', 'application/json');  
         }
 
         public function store(Request $request, Response $response, array $args)
         {
-            $project = $request->getParsedBody();
-            Project::create($project);
-            $response->getBody()->write(json_encode(['message'=>'Proiect adaugat cu succes!']));
+            $deployment = $request->getParsedBody();
+            Deployment::create($deployment);
+            $response->getBody()->write(json_encode(['message'=>'Implementare adaugata cu succes!']));
             return $response->withHeader('Content-Type', 'application/json');
         }
 
         public function show (Request $request, Response $response, array $args) 
         {
-            $project = Project::with("environments")->find($args['id']);
-            if(!$project){
+            $deployment = Deployment::with("environment")->find($args['id']);
+            if(!$deployment){
                 $response->getBody()->write(json_encode(['message'=>'Nu exista date!']));
                 return $response->withHeader('Content-Type', 'application/json');
             }
-            $response->getBody()->write(json_encode($project));
+            $response->getBody()->write(json_encode($deployment));
             return $response->withHeader('Content-Type', 'application/json');
         }
         
         public function update (Request $request, Response $response, array $args) 
         {
             $data = json_decode($request->getBody()->getContents(), true);
-            $project = Project::find($args['id']);
-            if(!$project){
+            $deployment = Deployment::find($args['id']);
+            if(!$deployment){
                 $response->getBody()->write(json_encode(['message'=>'Nu exista date!']));
                 return $response->withHeader('Content-Type', 'application/json');
             }
-            $project->fill($data);
-            $project->save();
-            $response->getBody()->write(json_encode(['message'=>'Proiect actualizat!']));
+            $deployment->fill($data);
+            $deployment->save();
+            $response->getBody()->write(json_encode(['message'=>'Implementare actualizata!']));
             return $response->withHeader('Content-Type', 'application/json');
         }
         
         public function delete (Request $request, Response $response, array $args) 
         {
-            $project = Project::find($args['id']);
-            if(!$project){
+            $deployment = Deployment::find($args['id']);
+            if(!$deployment){
                 $response->getBody()->write(json_encode(['message'=>'Nu exista date!']));
                 return $response->withHeader('Content-Type', 'application/json');
             }
-            $project->delete();
-            $response->getBody()->write(json_encode(['message'=>'Proiect sters cu succes!']));
+            $deployment->delete();
+            $response->getBody()->write(json_encode(['message'=>'Implementare stersa cu succes!']));
             return $response->withHeader('Content-Type', 'application/json');
         }
     }

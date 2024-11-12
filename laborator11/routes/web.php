@@ -4,6 +4,7 @@
     //Controllers
     use App\Controllers\ProjectController;
     use App\Controllers\EnvironmentController;
+    use App\Controllers\DeploymentController;
     //Index
     $app->get('/', function (Request $request, Response $response, array $args) {
         $response->getBody()->write("Hello!");
@@ -21,3 +22,9 @@
     $app->post('/environments', [EnvironmentController::class, 'store']);
     $app->put('/environments/{id}', [EnvironmentController::class, 'update']);
     $app->delete('/environments/{id}', [EnvironmentController::class, 'delete']);
+    //Deployment
+    $app->get('/deployments', [DeploymentController::class, 'index']);
+    $app->get('/deployments/{id}', [DeploymentController::class, 'show']);
+    $app->post('/deployments', [DeploymentController::class, 'store']);
+    $app->put('/deployments/{id}', [DeploymentController::class, 'update']);
+    $app->delete('/deployments/{id}', [DeploymentController::class, 'delete']);
