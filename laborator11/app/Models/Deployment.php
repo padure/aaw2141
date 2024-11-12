@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
         protected $fillable = ['commit_hash', 'environment_id'];
 
+        protected $hidden = ['environment_id'];
+
         public function environment():BelongsTo
         {
             return $this->belongsTo(Environment::class);
