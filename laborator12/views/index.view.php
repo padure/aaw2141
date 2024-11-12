@@ -27,7 +27,25 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        <?php if($books->count() > 0): ?>
+                            <?php foreach($books as $book): ?>
+                                <tr>
+                                    <td><?= $book->id ?></td>
+                                    <td><?= $book->title ?></td>
+                                    <td><?= $book->description ?></td>
+                                    <td><?= $book->pages ?></td>
+                                    <td><?= $book->price ?></td>
+                                    <td><?= $book->author ?></td>
+                                    <td>
+                                        <a href="/edit?book=$book->id" class="btn btn-warning btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7">There are not the books</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
