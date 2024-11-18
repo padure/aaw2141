@@ -38,6 +38,11 @@
                                     <td><?= $book->author ?></td>
                                     <td>
                                         <a href="/edit/<?=$book->id?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="/show/<?=$book->id?>" class="btn btn-info btn-sm">Show</a>
+                                        <form action="/delete/<?=$book->id?>" method="post">
+                                            <input type="hidden" name="_METHOD" value="DELETE"/>
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

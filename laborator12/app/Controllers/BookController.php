@@ -56,4 +56,23 @@ class BookController
             ->withHeader('Location', '/books')
             ->withStatus(302);
     }
+
+    public function delete(Request $request, Response $response, $args)
+    {   
+        $book = Book::find($args['id']);
+        $book->delete();
+        return $response
+            ->withHeader('Location', '/books')
+            ->withStatus(302);
+    }
+    
+    public function show(Request $request, Response $response, $args)
+    {
+        $book = Book::find($args['id']);
+        ob_start();
+        require '../views/show.view.php';
+        $html = ob_get_clean();
+        $response->getBody()->write($html);
+        return $response;
+    }
 }
