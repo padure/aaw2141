@@ -37,7 +37,7 @@
                                     <td><?= $book->price ?></td>
                                     <td><?= $book->author ?></td>
                                     <td>
-                                        <a href="/edit?book=$book->id" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="/edit/<?=$book->id?>" class="btn btn-warning btn-sm">Edit</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
