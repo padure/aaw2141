@@ -1,0 +1,463 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Manufacturing Industry\n"
+"Last-Translator: \n"
+"Language-Team: Luzuk <support@luzuk.com>\n"
+"Language: English\n"
+"MIME-Version: 0.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: 404.php:16
+msgid 'Oops! That page can&rsquo;t be found.'
+msgstr ""
+
+#: 404.php:18
+msgid 'Return to home page'
+msgstr ""
+
+#: 404.php:22
+msgid 'It looks like nothing was found at this location. Maybe try a search?'
+msgstr ""
+
+#: archive.php:48
+#: archive.php:81
+#: archive.php:114
+#: archive.php:146
+#: archive.php:175
+#: index.php:39
+#: index.php:74
+#: index.php:108
+#: index.php:142
+#: index.php:171
+#: search.php:51
+#: search.php:86
+#: search.php:122
+#: search.php:158
+#: search.php:193
+msgid 'Previous page'
+msgstr ""
+
+#: archive.php:49
+#: archive.php:82
+#: archive.php:115
+#: archive.php:147
+#: archive.php:176
+#: index.php:40
+#: index.php:75
+#: index.php:109
+#: index.php:143
+#: index.php:172
+#: search.php:52
+#: search.php:87
+#: search.php:123
+#: search.php:159
+#: search.php:194
+msgid 'Next page'
+msgstr ""
+
+#: archive.php:50
+#: archive.php:83
+#: archive.php:116
+#: archive.php:148
+#: archive.php:177
+#: index.php:41
+#: index.php:76
+#: index.php:110
+#: index.php:144
+#: index.php:173
+#: search.php:53
+#: search.php:88
+#: search.php:124
+#: search.php:160
+#: search.php:195
+msgid 'Page'
+msgstr ""
+
+#: comments.php:22
+msgid 'One thought on &ldquo;%s&rdquo;'
+msgstr ""
+
+#: comments.php:31
+msgid 'comments title'
+msgstr ""
+
+#: comments.php:65
+msgid 'Comments are closed.'
+msgstr ""
+
+#: header.php:26
+msgid 'Skip to content'
+msgstr ""
+
+#: header.php:40
+msgid 'Facebook'
+msgstr ""
+
+#: header.php:43
+msgid 'Twitter'
+msgstr ""
+
+#: header.php:46
+msgid 'Youtube'
+msgstr ""
+
+#: header.php:49
+msgid 'Instagram'
+msgstr ""
+
+#: header.php:86
+msgid 'Open Menu'
+msgstr ""
+
+#: header.php:90
+msgid 'Top Menu'
+msgstr ""
+
+#: header.php:100
+msgid 'Close Menu'
+msgstr ""
+
+#: searchform.php:15
+msgid 'Search for:'
+msgstr ""
+
+#: searchform.php:16
+#: searchform.php:18
+msgid 'Search'
+msgstr ""
+
+#: searchform.php:16
+msgid 'placeholder'
+msgstr ""
+
+#: searchform.php:18
+msgid 'submit button'
+msgstr ""
+
+#: search.php:17
+#: template-parts/post/content-none.php:14
+msgid 'Nothing Found'
+msgstr ""
+
+#: search.php:15
+msgid 'Search Results for: %s'
+msgstr ""
+
+#: search.php:40
+#: search.php:76
+#: search.php:112
+#: search.php:147
+#: search.php:183
+msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'
+msgstr ""
+
+#: single.php:33
+#: single.php:59
+#: single.php:84
+#: single.php:108
+msgid 'Previous Post'
+msgstr ""
+
+#: single.php:33
+#: single.php:59
+#: single.php:84
+#: single.php:108
+msgid 'Previous'
+msgstr ""
+
+#: single.php:34
+#: single.php:60
+#: single.php:85
+#: single.php:109
+msgid 'Next Post'
+msgstr ""
+
+#: single.php:34
+#: single.php:60
+#: single.php:85
+#: single.php:109
+msgid 'Next'
+msgstr ""
+
+#: functions.php:39
+msgid 'Primary Menu'
+msgstr ""
+
+#: functions.php:71
+msgid 'Welcome to Luzuk!!'
+msgstr ""
+
+#: functions.php:72
+msgid 'Thank you for choosing Manufacturing Industry theme. It will be our pleasure to have you on our Welcome page to serve you better.'
+msgstr ""
+
+#: functions.php:73
+msgid 'GET STARTED'
+msgstr ""
+
+#: functions.php:79
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:81
+msgid 'Add widgets here to appear in your sidebar on blog posts and archive pages.'
+msgstr ""
+
+#: functions.php:91
+#: functions.php:101
+msgid 'Add widgets here to appear in your pages and posts'
+msgstr ""
+
+#: functions.php:89
+msgid 'Sidebar 2'
+msgstr ""
+
+#: functions.php:99
+msgid 'Sidebar 3'
+msgstr ""
+
+#: functions.php:109
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:119
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:129
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:139
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:111
+#: functions.php:121
+#: functions.php:131
+#: functions.php:141
+msgid 'Add widgets here to appear in your footer.'
+msgstr ""
+
+#: functions.php:214
+msgid 'Manufacturing Industry WordPress Theme'
+msgstr ""
+
+#: template-parts/footer/site-info.php:12
+msgid 'By Luzuk'
+msgstr ""
+
+#: template-parts/page/content-page.php:22
+msgid 'Pages:'
+msgstr ""
+
+#: template-parts/post/content-none.php:23
+msgid 'Ready to publish your first post? <a href="%s">Get started here</a>.'
+msgstr ""
+
+#: template-parts/post/content-none.php:29
+msgid 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.'
+msgstr ""
+
+#: template-parts/post/content.php:18
+#: template-parts/post/content-single.php:18
+msgid '0 Comments'
+msgstr ""
+
+#: template-parts/post/content.php:25
+#: template-parts/post/grid-layout.php:23
+#: page-template/custom-home-page.php:46
+#: page-template/custom-home-page.php:96
+msgid 'READ MORE'
+msgstr ""
+
+#: page-template/custom-home-page.php:59
+msgid 'Prev'
+msgstr ""
+
+#: page-template/custom-home-page.php:63
+msgid 'Next'
+msgstr ""
+
+#: inc/customizer.php:17
+#: inc/customizer.php:414
+msgid 'Manufacturing Industry Pro'
+msgstr ""
+
+#: inc/customizer.php:19
+#: inc/customizer.php:416
+msgid 'Go Pro'
+msgstr ""
+
+#: inc/customizer.php:54
+msgid 'Logo Margin'
+msgstr ""
+
+#: inc/customizer.php:64
+#: footer.php:23
+msgid 'Top'
+msgstr ""
+
+#: inc/customizer.php:74
+msgid 'Bottom'
+msgstr ""
+
+#: inc/customizer.php:84
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:94
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:104
+msgid 'Show / Hide Site Title'
+msgstr ""
+
+#: inc/customizer.php:114
+msgid 'Site Title Font Size'
+msgstr ""
+
+#: inc/customizer.php:124
+msgid 'Show / Hide Site Tagline'
+msgstr ""
+
+#: inc/customizer.php:134
+msgid 'Site Tagline Font Size'
+msgstr ""
+
+#: inc/customizer.php:142
+msgid 'Theme Settings'
+msgstr ""
+
+#: inc/customizer.php:143
+msgid 'Description of what this panel does.'
+msgstr ""
+
+#: inc/customizer.php:147
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:158
+msgid 'Blog Page Sidebar Layout'
+msgstr ""
+
+#: inc/customizer.php:161
+#: inc/customizer.php:177
+#: inc/customizer.php:192
+#: inc/customizer.php:207
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:162
+#: inc/customizer.php:178
+#: inc/customizer.php:193
+#: inc/customizer.php:208
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:163
+#: inc/customizer.php:179
+#: inc/customizer.php:194
+#: inc/customizer.php:209
+msgid "One Column"
+msgstr ""
+
+#: inc/customizer.php:166
+#: inc/customizer.php:210
+msgid "Grid Layout"
+msgstr ""
+
+#: inc/customizer.php:174
+msgid "Single Post Sidebar Layout"
+msgstr ""
+
+#: inc/customizer.php:189
+msgid "Page Sidebar Layout"
+msgstr ""
+
+#: inc/customizer.php:204
+msgid "Archive & Search Page Sidebar Layout"
+msgstr ""
+
+#: inc/customizer.php:216
+msgid 'Header'
+msgstr ""
+
+#: inc/customizer.php:227
+msgid 'Add Email Address'
+msgstr ""
+
+#: inc/customizer.php:237
+msgid 'Add Phone Text'
+msgstr ""
+
+#: inc/customizer.php:247
+msgid 'Add Phone Number'
+msgstr ""
+
+#: inc/customizer.php:257
+msgid 'Add Facebook URL'
+msgstr ""
+
+#: inc/customizer.php:267
+msgid 'Add Twitter URL'
+msgstr ""
+
+#: inc/customizer.php:277
+msgid 'Add Youtube URL'
+msgstr ""
+
+#: inc/customizer.php:287
+msgid 'Add Instagram URL'
+msgstr ""
+
+#: inc/customizer.php:293
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:304
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:314
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:322
+msgid 'Our Features'
+msgstr ""
+
+#: inc/customizer.php:323
+msgid 'This section will appear below the slider.'
+msgstr ""
+
+#: inc/customizer.php:346
+msgid 'Select Category to display Posts'
+msgstr ""
+
+#: inc/customizer.php:355
+msgid 'Number of posts to show in a category'
+msgstr ""
+
+#: inc/customizer.php:369
+msgid 'Feature Icon '
+msgstr ""
+
+#: inc/customizer.php:375
+#: inc/customizer.php:395
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:386
+msgid 'Show / Hide Back to Top'
+msgstr ""
+
+#: inc/customizer.php:407
+msgid 'Copyright Top Bottom Padding'
+msgstr ""
